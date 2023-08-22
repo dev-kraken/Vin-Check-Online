@@ -1,113 +1,334 @@
-import Image from 'next/image'
+import { Hero } from "@/components";
+import Image from "next/image";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+  return (  
+    <main className="overflow-hidden">
+      <Hero />
+      <div className="car-card__btn-container">
+          
+        </div>
+      <div className="mt-12 padding-x padding-y max-width" id="discover">
+        <div className="home__text-container">
+          <h1 className="text-4xl font-extrabold">
+            Free VIN Check in Easy Steps
+          </h1>
+          <p>
+            We offers free access to vehicle information collated from trusted
+            sources. Look up vehicle records by VIN, any model or make, across
+            50 states in a minute or less:
+          </p>
+        </div>
+        <section>
+          <div className="home__cars-wrapper">
+            <div className="car-card group">
+              <div className="car-card__content">
+                <h2 className="car-card__content-title">Look for the VIN</h2>
+              </div>
+
+              <p className="flex mt-6 text-[32px] leading-[38px] font-extrabold">
+                <span className="self-start text-[14px] leading-[17px] font-semibold">
+                  Step 1
+                </span>
+              </p>
+
+              <div className="relative w-full h-40 my-3 object-contain">
+                <Image
+                  src="/vin-car-look.svg"
+                  alt="car model"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="relative flex w-full mt-2">
+                <div className="w-full justify-between text-black-600">
+                  <p className="car-card__icon-text">
+                    It is typically found on the driver’s side dashboard where
+                    the dashboard meets the windshield.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="car-card group">
+              <div className="car-card__content">
+                <h2 className="car-card__content-title">
+                  Start the VIN Search
+                </h2>
+              </div>
+
+              <p className="flex mt-6 text-[32px] leading-[38px] font-extrabold">
+                <span className="self-start text-[14px] leading-[17px] font-semibold">
+                  Step 2
+                </span>
+              </p>
+
+              <div className="relative w-full h-40 my-3 object-contain">
+                <Image
+                  src="/check-is-vin.svg"
+                  alt="car model"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="relative flex w-full mt-2">
+                <div className="w-full justify-between text-black-600">
+                  <p className="car-card__icon-text">
+                  Enter the VIN into the search box. Hit Continue to launch the database search.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="car-card group">
+              <div className="car-card__content">
+                <h2 className="car-card__content-title">Get VIN Report</h2>
+              </div>
+
+              <p className="flex mt-6 text-[32px] leading-[38px] font-extrabold">
+                <span className="self-start text-[14px] leading-[17px] font-semibold">
+                  Step 3
+                </span>
+              </p>
+
+              <div className="relative w-full h-40 my-3 object-contain">
+                <Image
+                  src="/get-vin-report.svg"
+                  alt="car model"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="relative flex w-full mt-2">
+                <div className="w-full justify-between text-black-600">
+                  <p className="car-card__icon-text">
+                  Browse the report and get whay you looking for.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="car-card group">
+              <div className="car-card__content">
+                <h2 className="car-card__content-title">Share VIN Report</h2>
+              </div>
+
+              <p className="flex mt-6 text-[32px] leading-[38px] font-extrabold">
+                <span className="self-start text-[14px] leading-[17px] font-semibold">
+                  Step 4
+                </span>
+              </p>
+
+              <div className="relative w-full h-40 my-3 object-contain">
+                <Image
+                  src="/share-vin-report.svg"
+                  alt="car model"
+                  fill
+                  priority
+                  className="object-contain"
+                />
+              </div>
+
+              <div className="relative flex w-full mt-2">
+                <div className="w-full justify-between text-black-600">
+                  <p className="car-card__icon-text">
+                    Typing ...
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div className="home__text-container mt-16">
+          <h1 className="text-4xl font-extrabold">
+            How to Decode the Vehicle Identification Number
+          </h1>
+          <div className="grid grid-cols-3 gap-4 mt-7">
+            <div>
+              <p className="text-justify">
+                1. Locate the Vehicle Identification Number (VIN). The VIN is
+                typically located on the driver's side dashboard, near the
+                windshield, or on the driver's side door jamb.
+              </p>
+              <p className="text-justify">
+              2. Determine the
+                country of origin. The first three digits of the VIN indicate
+                where the vehicle was manufactured. For example, a VIN beginning
+                with 1HG indicates that the vehicle was manufactured in the
+                United States.
+              </p>
+              <p className="text-justify">
+              3. Identify the manufacturer and model year. The
+                fourth through eighth digits of a VIN indicate information about
+                the manufacturer and model year of a vehicle. For example, a VIN
+                beginning with 1HGCR2F83EA indicates that it is a Honda CR-V
+                from 2014.
+              </p>
+              <p className="text-justify">
+              4. Determine other features of the vehicle. The ninth
+                digit of a VIN is known as a check digit and is used to verify
+                that all other digits are correct and valid. The tenth through
+                seventeenth digits indicate additional information about
+                features such as engine size, body style, transmission type, and
+                more.
+              </p>
+            </div>
+            <div className="col-span-2 items-center flex">
+              <div className="relative w-full h-72 my-3 object-contain">
+                <Image
+                  src="/vin-decoder.avif"
+                  alt="car model"
+                  fill
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="home__text-container mt-16">
+          <h1 className="text-4xl font-extrabold">
+          World Manufacturer Identifier (WMI): Country of Origin Character
+            Codes
+          </h1>
+        <div className="w-4/6 mx-auto lg:w-full sm:w-full">
+          <p className="text-lg leading-8	mt-4">
+            {" "}
+            The World Manufacturer Identifier (WMI) is a three-character
+            alphanumeric code that identifies the country of origin of a
+            vehicle. The first character of the WMI is a letter that represents
+            the country in which the vehicle was manufactured. The second and
+            third characters are numbers that identify the specific manufacturer
+            within that country.
+            <br />
+            <br />
+            For example, a WMI of "1HG" indicates that the vehicle was
+            manufactured in the United States by Honda. A WMI of "WVW" indicates
+            that the vehicle was manufactured in Germany by Volkswagen.
+          </p>
+          <table className="border-collapse w-full border border-[#BFDCE5] bg-white text-sm shadow-sm">
+            <thead className="bg-slate-50">
+              <tr>
+                <th className="w-1/4 border border-[#BFDCE5] font-semibold p-4 text-[#3E54AC] text-left">
+                  WMI
+                </th>
+                <th className="w-1/4 border border-[#BFDCE5] font-semibold p-4 text-[#3E54AC] text-left">
+                  Region
+                </th>
+                <th className="w-3/4 border border-[#BFDCE5] font-semibold p-4 text-[#3E54AC] text-left">
+                  Notes
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  A-H
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  Africa
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  AA-AH = South Africa
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  J-R
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  Asia
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 leading-6">
+                  J = Japan <br />
+                  KL-KR = South Korea <br />
+                  L = China <br />
+                  MA-ME = India <br />
+                  MF-MK = Indonesia <br />
+                  ML-MR = Thailand <br />
+                  MS = Myanmar <br />
+                  PA-PE = Philippines <br />
+                  PL-PR = Malaysia <br />
+                  RF-RG = Taiwan
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  S-Z
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  Europe
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 leading-6">
+                  SA-SM = United Kingdom <br />
+                  SN-ST, W = Germany <br />
+                  SU-SZ = Poland <br />
+                  TA-TH = Switzerland <br />
+                  TJ-TP = Czech Republic <br />
+                  TR-TV = Hungary <br />
+                  TW = Portugal <br />
+                  VA-VE = Austria <br />
+                  VF-VR = France <br />
+                  VS-VW = Spain <br />
+                  VX-V2 = Yugoslavia <br />
+                  XL-XM = The Netherlands <br />
+                  XS-XW = USSR <br />
+                  X3-X0 = Russia <br />
+                  YA-YE = Belgium <br />
+                  YF-YK = Finland <br />
+                  YS-YW = Sweden <br />
+                  ZA-ZR = Italy
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  1-5
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  North America
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 leading-6">
+                  1, 4, 5 = United States <br />
+                  2 = Canada <br />3 = Mexico
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  6-7
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  Oceania
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 leading-6">
+                  6A-6W = Australia <br />
+                  7A-7E = New Zealand
+                </td>
+              </tr>
+              <tr>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  8-0
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 ">
+                  South America
+                </td>
+                <td className="border border-[#BFDCE5] p-4 text-slate-800 leading-6">
+                  8A-8E = Argentina <br />
+                  8F-8J = Chile <br />
+                  8X-82 = Venezuela <br />
+                  9A-9E, 93-99 = Brazil <br />
+                  9F-9J = Colombia
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
-  )
+  );
 }
