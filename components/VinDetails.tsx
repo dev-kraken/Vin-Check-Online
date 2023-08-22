@@ -58,7 +58,7 @@ const CarDetails = ({ isOpen, closeModal, vinData }: CarDetailsProps) => (
                       {vinData[10].Value} {vinData[7].Value}{" "}
                       {vinData[9].Value}
                     </div>
-                    <table className="border-collapse w-full border border-[#BFDCE5]  bg-white text-sm shadow-sm">
+                    <table className="border-collapse w-full border border-[#BFDCE5] bg-white text-sm shadow-sm table-fixed">
                       <tbody>
                         <tr className="grid">
                           <td className="border border-[#BFDCE5]  p-2 text-[#3E54AC] ">
@@ -106,7 +106,7 @@ const CarDetails = ({ isOpen, closeModal, vinData }: CarDetailsProps) => (
                         </tr>
                       </tbody>
                     </table>
-                    <table className="border-collapse table-auto w-full border border-[#BFDCE5]  bg-white text-sm shadow-sm">
+                    <table className="border-collapse w-full border border-[#BFDCE5] bg-white text-sm shadow-sm table-fixed">
                       <tbody>
                         <tr className="sm:grid">
                           <td className="border border-[#BFDCE5]  p-2 text-[#3E54AC] ">
@@ -126,7 +126,7 @@ const CarDetails = ({ isOpen, closeModal, vinData }: CarDetailsProps) => (
                         </tr>
                       </tbody>
                     </table>
-                    <table className="border-collapse table-fixed w-full text-sm border">
+                    <table className="border-collapse table-fixed w-full text-sm border table-fixed">
                       <tbody className="bg-white">
                         <tr>
                           <td className="border border-[#BFDCE5] p-4 text-[#3E54AC]">

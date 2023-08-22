@@ -150,7 +150,7 @@ export default function Home() {
             How to Decode the Vehicle Identification Number
           </h1>
           <div className="grid grid-cols-3 gap-4 mt-7">
-            <div>
+            <div className="col-span-3 lg:col-span-1 sm:col-span-1">
               <p className="text-justify">
                 1. Locate the Vehicle Identification Number (VIN). The VIN is
                 typically located on the driver's side dashboard, near the
@@ -179,8 +179,8 @@ export default function Home() {
                 more.
               </p>
             </div>
-            <div className="col-span-2 items-center flex">
-              <div className="relative w-full h-72 my-3 object-contain">
+            <div className="col-span-3 items-center flex sm:col-span-2">
+              <div className="relative w-full h-40 my-3 object-contain sm:h-72">
                 <Image
                   src="/vin-decoder.avif"
                   alt="car model"
@@ -196,9 +196,8 @@ export default function Home() {
           World Manufacturer Identifier (WMI): Country of Origin Character
             Codes
           </h1>
-        <div className="w-4/6 mx-auto lg:w-full sm:w-full">
+        <div className="w-full">
           <p className="text-lg leading-8	mt-4">
-            {" "}
             The World Manufacturer Identifier (WMI) is a three-character
             alphanumeric code that identifies the country of origin of a
             vehicle. The first character of the WMI is a letter that represents
