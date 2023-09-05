@@ -45,9 +45,9 @@ export default function Home() {
       <div className="car-card__btn-container"></div>
       <div className="mt-12 padding-x padding-y max-width" id="discover">
         <div className="home__text-container">
-          <h1 className="text-4xl font-extrabold">
+          <h2 className="text-4xl font-extrabold">
             Free VIN Check in Easy Steps
-          </h1>
+          </h2>
           <p>
             We offers free access to vehicle information collated from trusted
             sources. Look up vehicle records by VIN, any model or make, across
@@ -153,9 +153,9 @@ export default function Home() {
         </section>
 
         <div className="home__text-container mt-16">
-          <h1 className="text-4xl font-extrabold">
+          <h2 className="text-4xl font-extrabold">
             How to Decode the Vehicle Identification Number
-          </h1>
+          </h2>
           <div className="grid grid-cols-3 gap-4 mt-7">
             <div className="col-span-3 lg:col-span-1 sm:col-span-1">
               <p className="text-justify">
@@ -195,7 +195,7 @@ export default function Home() {
 
         <section className="py-6 sm:py-12">
           <div className="container mx-auto space-y-8">
-            <h1 className="text-4xl font-extrabold">Blogs</h1>
+            <h2 className="text-4xl font-extrabold">Blogs</h2>
             <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
               {blogJSON?.map((blogs) => (
                 <BlogCard blogs={blogs}/>
@@ -205,10 +205,10 @@ export default function Home() {
         </section>
 
         <div className="home__text-container mt-12">
-          <h1 className="text-4xl font-extrabold">
+          <h2 className="text-4xl font-extrabold">
             World Manufacturer Identifier (WMI): Country of Origin Character
             Codes
-          </h1>
+          </h2>
           <div className="w-full">
             <p className="text-lg leading-8	mt-4">
               The World Manufacturer Identifier (WMI) is a three-character
