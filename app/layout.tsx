@@ -1,9 +1,9 @@
-import { Footer, Navbar } from '@/components'
+import { Footer, Navbar, Providers } from '@/components'
 import './globals.css'
 import Script from 'next/script'
 
 export const metadata = {
-  title: "Vin Check Online",
+  title: "Vin Check Online | Try our VIN check service today, no payment needed",
   description:
     "Discover your vehicle's history hassle-free! Get free, no-credit-card-required VIN checks online. Access essential information about any car's past and make informed decisions with confidence. Try our VIN check service today, no payment needed.",
   keywords:
@@ -26,7 +26,6 @@ export default function RootLayout({
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       <meta name="apple-mobile-web-app-title" content="VIN Check Online" />
-      <meta name="description" content="Check Vehicle Information Online" />
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="msapplication-TileColor" content="#007bff" />
@@ -62,9 +61,11 @@ export default function RootLayout({
       </Script>
 
       <body className="relative">
-        <Navbar />
-        {children}
-        <Footer />
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   )
