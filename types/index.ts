@@ -11,3 +11,9 @@ export interface CarProps {
   Variable: string;
   VariableId: number;
 }
+
+export interface BlogProps {
+  title: string;
+  postDate: string;
+  views: string;
+}

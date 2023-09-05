@@ -61,7 +61,7 @@ const SearchBar = () => {
           type="text"
           name="model"
           placeholder="Vin Number..."
-          className="searchbar__input"
+          className="searchbar__input placeholder:text-slate-700 placeholder:italic"
           onChange={handleChange}
           value={vinNumber}
         />
