@@ -1,5 +1,5 @@
-import { Footer, Navbar, Providers } from '@/components'
-import './globals.css'
+import { Footer, Navbar } from '@/components'
+import '../globals.css'
 import Script from 'next/script'
 
 export const metadata = {
@@ -15,13 +15,16 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+})
+
+{
   return (
     <html lang="en">
       <meta
         name='viewport'
         content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover'
       />
+      <link rel="shortcut icon" href="/favicon.ico" />
       <meta name="application-name" content="VIN Check Online" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -61,11 +64,9 @@ export default function RootLayout({
       </Script>
 
       <body className="relative">
-        <Providers>
           <Navbar />
           {children}
           <Footer />
-        </Providers>
       </body>
     </html>
   )

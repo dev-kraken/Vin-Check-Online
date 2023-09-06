@@ -3,7 +3,6 @@ import CustomButton from "./CustomButton";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import SearchBar from "./SearchBar";
-import Providers from "./Providers";
 
 export {
     Hero,
@@ -11,5 +10,4 @@ export {
     Navbar,
     Footer,
     SearchBar,
-    Providers
 }

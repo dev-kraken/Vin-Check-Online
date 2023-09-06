@@ -2,7 +2,6 @@ import { Hero } from "@/components";
 import BlogCard from "@/components/BlogCard";
 import Image from "next/image";
 import { PrismaClient } from '@prisma/client';
-
 const prisma = new PrismaClient();
 const blogJSON = [
   {
