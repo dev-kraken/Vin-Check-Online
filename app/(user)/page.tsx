@@ -1,5 +1,4 @@
-import { Hero } from "@/components";
-import BlogCard from "@/components/BlogCard";
+import { Hero, BlogCard } from "@/components";
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";

@@ -12,7 +12,7 @@ function BlogCard({posts} : Props) {
      <article key={post._id} className="flex flex-col bg-gradient-to-r from-[#4C68D9] to-[#A96AB6]">
         <a
           rel="noopener noreferrer"
-          href="#"
+          href={`/post/${post.slug.current}`}
           aria-label="Te nulla oportere reprimique his dolorum"
         >
           <img alt={post.author?.name} className="object-cover w-full h-52"
