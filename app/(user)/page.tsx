@@ -1,44 +1,22 @@
 import { Hero } from "@/components";
 import BlogCard from "@/components/BlogCard";
 import Image from "next/image";
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
 
 const prisma = new PrismaClient();
-const blogJSON = [
-  {
-    title: "Titile1",
-    postDate: "08/12/2023",
-    views: "2.3k",
-  },
-  {
-    title: "Titile2",
-    postDate: "08/12/2023",
-    views: "2.3k",
-  },
-  {
-    title: "Titile3",
-    postDate: "08/12/2023",
-    views: "2.3k",
-  },
-  {
-    title: "Titile4",
-    postDate: "08/12/2023",
-    views: "2.3k",
-  },
-];
 
-export default function Home() {
-  // const newPost = await prisma.post.create({
-  //   data:{
-  //     slug : '#',
+const query = groq`
+  *[_type=='post']{
+    ...,
+    author->,
+    categories[]->
+  }|order(_createdAt desc)
+`;
 
-  //     title : 'First Post',
-    
-  //     body : 'Fiest Body'
-  //   },
-  // });
-
-  // console.log('New user created:', newPost);
+export default async function Home(PreviewData: any) {
+  const posts = await client.fetch(query);
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -197,11 +175,10 @@ export default function Home() {
           <div className="container mx-auto space-y-8">
             <h2 className="text-4xl font-extrabold">Blogs</h2>
             <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-              {blogJSON?.map((blogs) => (
-                <BlogCard blogs={blogs}/>
-              ))}
-            </div>
+            <BlogCard posts={posts} />
           </div>
+          </div>
+          
         </section>
 
         <div className="home__text-container mt-12">

@@ -1,5 +1,5 @@
 import { Footer, Navbar } from '@/components'
-import './globals.css'
+import '.././globals.css'
 import Script from 'next/script'
 
 export const metadata = {
