@@ -1,12 +1,10 @@
 import { Hero } from "@/components";
 import BlogCard from "@/components/BlogCard";
 import Image from "next/image";
-import { PrismaClient } from "@prisma/client";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 
-const prisma = new PrismaClient();
-
+export const revalidate = 30;
 const query = groq`
   *[_type=='post']{
     ...,
