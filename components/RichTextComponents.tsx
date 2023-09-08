@@ -44,9 +44,9 @@ export const RichTextComponents = {
       </blockquote>
     ),
   },
-  mark: {
+  marks: {
     link: ({ children, value }: any) => {
-      const rel = !value.href.startWith("/")
+      const rel = !value.href.startsWith("/")
         ? "noreferrer noopener"
         : undefined;
 
@@ -54,7 +54,7 @@ export const RichTextComponents = {
         <Link
           href={value.href}
           rel={rel}
-          className="underline decoration-slice hover:decoration-black"
+          className="underline text-blue-600 decoration-slice hover:decoration-black"
         >
           {children}
         </Link>

@@ -18,6 +18,9 @@ function generateSiteMap(posts: any) {
      <url>
        <loc>https://www.vincheckonline.com/vin-decode</loc>
      </url>
+     <url>
+       <loc>https://www.vincheckonline.com/blogs</loc>
+     </url>
      ${posts
       .map(({ slug }:any) => {
         return `

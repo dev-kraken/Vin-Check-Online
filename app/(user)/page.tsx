@@ -172,10 +172,16 @@ export default async function Home(PreviewData: any) {
           <div className="container mx-auto space-y-8">
             <h2 className="text-4xl font-extrabold">Blogs</h2>
             <div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-            <BlogCard posts={posts} />
+              <BlogCard posts={posts} />
+            </div>
           </div>
-          </div>
-          
+            <a
+              type="button"
+              className="mt-8 custom-btn mx-auto text-center bg-gradient-to-r from-[#4C68D9] to-[#A96AB6] rounded-full text-white shadow-sm shadow-amber-50 w-[230px] min-w-[230px]"
+              href="/blogs"
+            >
+              <span className={`flex-1`}>More Blogs</span>
+            </a>
         </section>
 
         <div className="home__text-container mt-12">

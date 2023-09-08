@@ -10,6 +10,22 @@ type Props = {
         slug: string
     }
 }
+
+export async function generateStaticParams() {
+    const query = groq`
+    *[_type=='post']{
+        slug
+    }
+    `;
+    const slug: Post[] = await client.fetch(query)
+
+    const slugRoutes = slug.map((slug) => slug.slug.current);
+
+    return slugRoutes.map((slug) => ({
+        slug,
+    }));
+}
+
 export const revalidate = 30;
 async function Post({ params: { slug } }: Props) {
     const query = groq`
@@ -47,12 +63,12 @@ async function Post({ params: { slug } }: Props) {
                                     </p>
                                 </div>
                                 <div className='flex items-center space-x-2'>
-                                    <Image 
-                                    className='rounded-full bg-white'
-                                    src={urlFor(post.author.image).url()}
-                                    alt={post.author.name}
-                                    height={40}
-                                    width={40}
+                                    <Image
+                                        className='rounded-full bg-white'
+                                        src={urlFor(post.author.image).url()}
+                                        alt={post.author.name}
+                                        height={40}
+                                        width={40}
                                     />
                                     <div>
                                         <h3 className='text-lg font-bold text-white'>{post.author.name}</h3>
@@ -73,7 +89,7 @@ async function Post({ params: { slug } }: Props) {
                     </div>
                 </section>
 
-                <PortableText value={post.body} components={RichTextComponents}/>
+                <PortableText value={post.body} components={RichTextComponents} />
             </article>
         </div></main>
 }
