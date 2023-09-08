@@ -10,7 +10,7 @@ type Props = {
         slug: string
     }
 }
-
+export const revalidate = 30;
 async function Post({ params: { slug } }: Props) {
     const query = groq`
     *[_type=='post' && slug.current == $slug][0]{
