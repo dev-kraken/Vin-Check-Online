@@ -20,26 +20,25 @@ async function Post({ params: { slug } }: Props) {
     }
     `;
     const post: Post = await client.fetch(query, { slug });
-    console.log(post)
-    return <main className="overflow-hidden">
-        <div className="mt-12 padding-x padding-y max-width" id="discover">
-            <article className='px-10 pb-28'>
-                <section className='space-y-2'>
+    return <main className="overflow-hidden w-full">
+        <div className="mt-20 lg:padding-x padding-y mx-auto max-w-screen-md">
+            <article className='px-10 pb-20'>
+                <section className='space-y-2 mb-10'>
                     <div className='relative min-h-56 flex flex-col md:flex-row justify-between'>
-                        <div className='absolute top-0 w-full h-full opacity-50 blur-md p-10'>
-                            <Image className='object-cover object-center mx-auto'
+                        <div className='absolute top-0 w-full h-full opacity-20 blur-md p-10'>
+                            <Image className='object-cover object-center mx-auto rounded-sm'
                                 src={urlFor(post.mainImage).url()}
                                 alt={post.author.name}
                                 fill
                             />
                         </div>
-                        <section className='p-5 bg-slate-400 w-full'>
+                        <section className='p-5 rounded-sm bg-gradient-to-r from-[#4C68D9] to-[#A96AB6] w-full'>
                             <div className='flex flex-col md:flex-row justify-between gap-y-5'>
                                 <div>
-                                    <h1 className='text-4xl font-extrabold'>
+                                    <h1 className='text-4xl font-extrabold text-white'>
                                         {post.title}
                                     </h1>
-                                    <p>
+                                    <p className='text-white'>
                                         {new Date(post._createdAt).toLocaleDateString("en-US", {
                                             day: 'numeric',
                                             month: "long",
@@ -56,7 +55,7 @@ async function Post({ params: { slug } }: Props) {
                                     width={40}
                                     />
                                     <div>
-                                        <h3 className='text-lg font-bold'>{post.author.name}</h3>
+                                        <h3 className='text-lg font-bold text-white'>{post.author.name}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -64,9 +63,9 @@ async function Post({ params: { slug } }: Props) {
                                 <h2 className='italic pt-10'>{post.description}</h2>
                                 <div className='flex items-center justify-end mt-auto space-x-2'>
                                     {post.categories?.map((category) => (
-                                        <p key={category._id}>
+                                        <span className='bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded' key={category._id}>
                                             {category.title}
-                                        </p>
+                                        </span>
                                     ))}
                                 </div>
                             </div>
