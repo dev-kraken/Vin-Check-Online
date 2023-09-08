@@ -25,7 +25,7 @@ export const RichTextComponents = {
             <ol className="mt-lg list-decimal">{children}</ol>
         ),
     },
-    blocks: {
+    block: {
         h1: ({ children }: any) => (
             <h1 className="text-5xl py-10 font-bold">{children}</h1>
         ),

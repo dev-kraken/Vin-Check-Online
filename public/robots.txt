@@ -6,8 +6,6 @@ Allow: /
 
 Disallow: /dashboard
 Disallow: /dashboard/*
-Disallow: /auth/signIn
-Disallow: /auth/*
 
 
 Sitemap: https://www.vincheckonline.com/sitemap.xml
