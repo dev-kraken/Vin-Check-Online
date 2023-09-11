@@ -2,6 +2,7 @@ import { Hero, BlogCard } from "@/components";
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
+import Link from "next/link";
 
 export const revalidate = 30;
 const query = groq`
@@ -162,7 +163,7 @@ export default async function Home(PreviewData: any) {
             </div>
             <div className="col-span-3 items-center flex sm:col-span-2">
               <div className="relative w-full h-40 my-3 object-contain sm:h-72">
-                <Image src="/vin-decoder.avif" alt="car model" fill priority />
+                <Image src="/vin-decoder.avif" sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" alt="car model" fill priority />
               </div>
             </div>
           </div>
@@ -175,13 +176,13 @@ export default async function Home(PreviewData: any) {
               <BlogCard posts={posts} />
             </div>
           </div>
-            <a
+            <Link
               type="button"
               className="mt-8 custom-btn mx-auto text-center bg-gradient-to-r from-[#4C68D9] to-[#A96AB6] rounded-full text-white shadow-sm shadow-amber-50 w-[230px] min-w-[230px]"
               href="/blogs"
             >
               <span className={`flex-1`}>More Blogs</span>
-            </a>
+            </Link>
         </section>
 
         <div className="home__text-container mt-12">

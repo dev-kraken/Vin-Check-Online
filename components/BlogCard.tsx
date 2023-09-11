@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import urlFor from "@/lib/urlFor";
+import Image from "next/image";
+import Link from "next/link";
 type Props = {
   posts: Post[];
 };
@@ -13,15 +15,17 @@ function BlogCard({ posts }: Props) {
           key={post._id}
           className="flex flex-col bg-gradient-to-r from-[#4C68D9] to-[#A96AB6] backdrop-blur-xl rounded-md"
         >
-          <a
+          <Link
             rel="noopener noreferrer"
             href={`/post/${post.slug.current}`}
             aria-label="vin check online"
           >
-            <img
+            <Image
               alt={post.author?.name}
               className="object-cover w-full h-52"
               src={urlFor(post.mainImage).url()}
+              width={630}
+              height={330}
             />
 
             <div className="flex flex-col flex-1 p-6">
@@ -39,7 +43,7 @@ function BlogCard({ posts }: Props) {
                 <span>12k views</span>
               </div>
             </div>
-          </a>
+          </Link>
         </article>
       ))}
     </>

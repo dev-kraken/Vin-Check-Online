@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-import { CustomButton, SearchBar } from "@/components";
+import { SearchBar } from "@/components";
 
 
 const Hero = () => {
@@ -14,7 +14,9 @@ const Hero = () => {
       nextSection.scrollIntoView({ behavior: "smooth" });
     }
   };
-
+  const imageLoader = ({ src, width, quality } : any) => {
+    return `${src}?w=${width}&q=${quality || 75}`
+  }
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">
@@ -28,7 +30,7 @@ const Hero = () => {
       </div>
       <div className="hero__image-container">
         <div className="hero__image">
-          <Image src="/hero.png" alt="hero" fill className="object-contain" />
+          <Image loader={imageLoader} sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" src="/hero-min.png" alt="hero" fill className="object-contain" priority />
         </div>
 
         <div className="hero__image-overlay" />

@@ -3,6 +3,7 @@ import { client } from "@/sanity/lib/client";
 import urlFor from "@/lib/urlFor";
 import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, PromiseLikeOfReactNode } from "react";
 import DateAgo from "@/components/DateAgo";
+import Link from "next/link";
 
 export const revalidate = 30;
 const query = groq`
@@ -42,7 +43,7 @@ const Blogs = async () => {
                                     </span>
                                     <span className="text-sm"><DateAgo date={post._createdAt} /></span>
                                 </div>
-                                <h2 className="mb-2 text-2xl font-bold tracking-tight text-white"><a href={`/post/${post.slug.current}`}>{post.title}</a></h2>
+                                <h2 className="mb-2 text-2xl font-bold tracking-tight text-white"><Link href={`/post/${post.slug.current}`}>{post.title}</Link></h2>
                                 <p className="mb-5 font-light text-gray-300">
                                     {post.description}...
                                 </p>
@@ -53,10 +54,10 @@ const Blogs = async () => {
                                             {post.author.name}
                                         </span>
                                     </div>
-                                    <a href={`/post/${post.slug.current}`} className="inline-flex items-center font-medium text-slate-800 hover:underline">
+                                    <Link href={`/post/${post.slug.current}`} className="inline-flex items-center font-medium text-slate-800 hover:underline">
                                         Read more
                                         <svg className="ml-2 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                                    </a>
+                                    </Link>
                                 </div>
                             </article>
                         ))}
