@@ -9,7 +9,7 @@ export const metadata = {
   description:
     "Discover your vehicle's history hassle-free! Get free, no-credit-card-required VIN checks online. Access essential information about any car's past and make informed decisions with confidence. Try our VIN check service today, no payment needed.",
   keywords:
-    "vin lookup	, vin check online, vin number lookup, vin check,free vin check, vin search, vin lookup free,vin number lookup free,vin number check,vin look up, free vin number check,vin number searchm,car vin lookup,vehicle history,vehicle vin lookup,vin search free",
+    "vin lookup	, vin check online, vin number lookup, vin check,free vin check, vin search, vin lookup free,vin number lookup free,vin number check,vin look up, free vin number check,vin number searchm,car vin lookup,vehicle history,vehicle vin lookup,vin search free, vehicle identification numbe,vehicle vin check,car vin,check car vin numbe,vehicle identification number lookup,free vin report,car vin check,car vin number lookup,search car by vin,vin code check,car vin number search,free car report by vin",
   manifest: "/manifest.webmanifest",
 };
 
