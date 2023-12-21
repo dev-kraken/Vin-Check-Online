@@ -1,7 +1,8 @@
 import { Footer, Navbar } from "@/components";
 import "../globals.css";
 import Script from "next/script";
-
+import Head from "next/head";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 export const metadata = {
   title:
     "Vin Check Online | Try our VIN check service today, no payment needed",
@@ -82,11 +83,17 @@ export default function RootLayout({
           gtag('config', 'G-51GY603RL9', {cookie_flags: 'SameSite=None;Secure'});
         `}
       </Script>
+      <Script>
+        {`
+          gtag('event', 'conversion', {'send_to': 'AW-11454441471/xCKaCNnv04EZEP_P89Uq'});
+        `}
+      </Script>
 
       <body className="relative">
         <Navbar />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
